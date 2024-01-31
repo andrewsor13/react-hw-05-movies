@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
 
 import Navigation from './Navigation/Navigation';
 import Home from '../pages/Home/Home';
@@ -11,18 +10,16 @@ import '../store/TrendingData';
 import { TrendingProvider } from 'store/TrendingData';
 export const App = () => {
   return (
-    <HashRouter>
-      <TrendingProvider>
-        <div>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </div>
-      </TrendingProvider>
-    </HashRouter>
+    <TrendingProvider>
+      <div>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
+    </TrendingProvider>
   );
 };
