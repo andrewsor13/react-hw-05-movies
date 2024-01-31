@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import Navigation from './Navigation/Navigation';
 import Home from '../pages/Home/Home';
@@ -10,7 +11,7 @@ import '../store/TrendingData';
 import { TrendingProvider } from 'store/TrendingData';
 export const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <TrendingProvider>
         <div>
           <Navigation />
@@ -22,6 +23,6 @@ export const App = () => {
           </Routes>
         </div>
       </TrendingProvider>
-    </Router>
+    </HashRouter>
   );
 };
