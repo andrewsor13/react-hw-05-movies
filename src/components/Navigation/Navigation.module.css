@@ -1,0 +1,23 @@
+.navigation {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navigation .home,
+.navigation .home:hover,
+.navigation .home:focus {
+  color: black;
+}
+
+a {
+  transition: background-color 1s ease;
+}
+a:hover {
+  background-color: #d1d1d1;
+}
+
+.image {
+  cursor: pointer;
+}
