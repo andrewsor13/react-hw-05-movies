@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 
+import Nav from 'react-bootstrap/Nav';
 import styles from './Navigation.module.css';
 import './Navigation.module.css';
 import Logo from '../../assets/film.svg';
@@ -21,23 +22,28 @@ export default function Navigation() {
         alt="Page Logo"
         className={styles.image}
       />
-      <Link
-        to="/"
-        className={`${styles.home} ${
-          location.pathname === '/home' ? 'active' : ''
-        }`}
-      >
-        Home
-      </Link>
-
-      <Link
-        to="/movies"
-        className={`${styles.home} ${
-          location.pathname === '/movies' ? 'active' : ''
-        }`}
-      >
-        Movies
-      </Link>
+      <Nav justify fill variant="tabs">
+        <Nav.Item>
+          <Link
+            to="/home"
+            className={`${'nav-link'} ${styles.home} ${
+              location.pathname === '/home' ? 'active' : ''
+            }`}
+          >
+            Home
+          </Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Link
+            to="/movies"
+            className={`${'nav-link'} ${styles.home} ${
+              location.pathname === '/movies' ? 'active' : ''
+            }`}
+          >
+            Movies
+          </Link>
+        </Nav.Item>
+      </Nav>
     </nav>
   );
 }
