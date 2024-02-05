@@ -12,8 +12,8 @@ const options = {
 };
 const TrendingContext = createContext();
 
-export const TrendingProvider = ({ children }) => {
-  const [trendingData, setTrendingData] = useState(null);
+export const TrendingMoviesProvider = ({ children }) => {
+  const [trendingMoviesData, setTrendingMoviesData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -21,8 +21,7 @@ export const TrendingProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url, options);
-        setTrendingData(response.data.results);
-        console.log(response.data);
+        setTrendingMoviesData(response.data.results);
       } catch (error) {
         setError(error);
       } finally {
@@ -33,7 +32,7 @@ export const TrendingProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  const contextValue = { trendingData, isLoading, error };
+  const contextValue = { trendingMoviesData, isLoading, error };
 
   return (
     <TrendingContext.Provider value={contextValue}>
@@ -42,7 +41,7 @@ export const TrendingProvider = ({ children }) => {
   );
 };
 
-export const useTrendingData = () => {
+export const useMoviesTrendingData = () => {
   const context = useContext(TrendingContext);
   if (!context) {
     throw new Error(

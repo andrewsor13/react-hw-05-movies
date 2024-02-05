@@ -1,0 +1,23 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.form {
+  width: 500px;
+  position: relative;
+}
+
+.form-control {
+  padding-left: 5em;
+}
+
+.searchButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background-color: inherit;
+  align-items: center;
+}
