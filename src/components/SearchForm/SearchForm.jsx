@@ -6,7 +6,7 @@ import { useSearchFormData } from 'store/SearchFormData';
 
 export default function SearchForm() {
   const [inputValue, setInputValue] = useState('');
-  const { query, isLoading, error, setQuery } = useSearchFormData();
+  const { query, setQuery } = useSearchFormData();
 
   const handleSubmit = e => {
     e.preventDefault();
