@@ -24,7 +24,7 @@ export default function Cover({
         <div className={styles.ratingContainer}>
           <FaStar color="orange" />
           <p>
-            <b>{vote_average.toFixed(1)}</b>
+            <b>{vote_average?.toFixed(1)}</b>
           </p>
         </div>
         <p>

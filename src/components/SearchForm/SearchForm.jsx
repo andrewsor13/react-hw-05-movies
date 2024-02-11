@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './SearchForm.module.css';
 import { Form } from 'react-bootstrap';
 import { IoSearchSharp } from 'react-icons/io5';
 import { useSearchFormData } from 'store/SearchFormData';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchForm() {
   const [inputValue, setInputValue] = useState('');
-  const { query, setQuery } = useSearchFormData();
+  const { isLoading, error, setQuery } = useSearchFormData();
+  const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
     setQuery(inputValue);
-    console.log(query);
+    navigate(`${inputValue}`);
     setInputValue('');
   };
 

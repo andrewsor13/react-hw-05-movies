@@ -1,0 +1,43 @@
+.reviewsHead {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 20px;
+  padding: 5px 10px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+
+.reviewerContainer {
+  display: flex;
+  align-items: stretch;
+  flex: 20;
+}
+
+.reviewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  border-right: 1px solid black;
+  width: 100%;
+}
+
+.reviewContent {
+  flex: 80;
+  padding: 10px;
+}
+
+.content {
+  margin: 0;
+}

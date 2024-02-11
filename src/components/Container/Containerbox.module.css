@@ -1,7 +1,5 @@
 .container {
-  margin: 80px 0px;
+  margin: 80px auto;
   width: 1300px;
   position: relative;
-
-  /* background-color: antiquewhite; */
 }

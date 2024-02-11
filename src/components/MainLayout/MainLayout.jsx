@@ -6,6 +6,7 @@ import { useMoviesTrendingData } from 'store/TrendingMoviesData';
 import { useTvShowsTrendingData } from 'store/TrendingTvShowsData';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 import ButtonType from 'components/ButtonType/ButtonType';
+import { Link } from 'react-router-dom';
 
 export default function MainLayout() {
   const { trendingMoviesData, isLoading, error } = useMoviesTrendingData();
@@ -34,18 +35,20 @@ export default function MainLayout() {
         ) : (
           <ul className={styles.list}>
             {radioValue === '1'
-              ? trendingMoviesData?.map((movie, index) => (
-                  <li
-                    className={`${styles.listItem} ${styles.listEnter}`}
-                    key={index}
-                  >
-                    <Cover
-                      poster_path={movie.poster_path}
-                      title={movie.title}
-                      vote_average={movie.vote_average}
-                      release_date={movie.release_date}
-                    />
-                  </li>
+              ? trendingMoviesData?.map(movie => (
+                  <Link key={movie.id} to={`/${movie.id}`}>
+                    <li
+                      className={`${styles.listItem} ${styles.listEnter}`}
+                      key={movie.id}
+                    >
+                      <Cover
+                        poster_path={movie.poster_path}
+                        title={movie.title}
+                        vote_average={movie.vote_average}
+                        release_date={movie.release_date}
+                      />
+                    </li>
+                  </Link>
                 ))
               : radioValue === '2'
               ? trendingTvShowsData?.map((show, index) => (

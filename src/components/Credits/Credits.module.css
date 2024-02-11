@@ -1,0 +1,47 @@
+.list {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  gap: 20px;
+  padding: 20px;
+  scrollbar-width: thin;
+  overflow-y: hidden;
+  max-height: 80vh;
+}
+
+.listItem {
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  overflow: hidden;
+  flex: 70;
+}
+.image {
+  width: 150px;
+}
+.avatar {
+  display: flex;
+  overflow: hidden;
+  flex: 70;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+
+.reviewer {
+  flex: 30;
+}
+
+.list::-webkit-scrollbar {
+  width: 12px; /* Lățimea barei de derulare orizontală */
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #888; /* Culoarea fundalului barei de derulare orizontală */
+  border-radius: 20px; /* Bara de derulare ovală pe axa x */
+}
